@@ -1,0 +1,12 @@
+# Build directory and object files
+build/
+*.o
+
+# Executable
+covid-in
+
+# VS Code
+.vscode
+
+# TODO(s)
+TODO*
