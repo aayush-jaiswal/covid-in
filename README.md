@@ -40,3 +40,22 @@ OR
 ```sh
 $ covid-in -s [statecode seperated by comma]
 ```
+
+## Screenshots
+
+![Example 1](./screenshots/ex1.png)
+![Example 2](./screenshots/ex2.png)
+![Example 3](./screenshots/ex3.png)
+
+## TODOs
+
+- [ ] Add option to show tested data 
+- [ ] Show changes delta 
+- [ ] Add option to show district data 
+- [ ] Add option to show data in tabular form
+- [ ] Add option to show top 10
+- [ ] Add sort option according to key 
+
+### Data Source
+
+https://www.covid19india.org/
