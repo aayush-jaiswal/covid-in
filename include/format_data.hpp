@@ -7,5 +7,6 @@ using json = nlohmann::json;
 
 std::string stripped_string(std::string s);
 void print_formatted_output (json data);
+void print_formatted_tested (json data);
 
 #endif

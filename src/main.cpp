@@ -15,6 +15,7 @@ int main(int argc, char *argv[]) {
         options.add_options()
             ("h, help", "Print help/usage")
             ("s, state", "Choose state(s) to display stats", cxxopts::value<std::vector<std::string>>(), "statecode")
+            ("t, tested", "Show tested data")
             ("statecodes", "Display state codes");
 
         auto result = options.parse(argc, argv);
@@ -48,6 +49,10 @@ int main(int argc, char *argv[]) {
         }
 
         print_formatted_output(all_data["statewise"][0]);
+
+        if (result.count("tested")) {
+            print_formatted_tested(all_data["tested"].back());
+        }
     }
     catch (const cxxopts::OptionException& e) {
         std::cerr << "Error parsing options! Try again with valid options.\n";
