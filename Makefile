@@ -1,7 +1,7 @@
 CXX := g++
-CXXFLAGS := -std=c++14 -Wall 
+CXXFLAGS := -std=c++14 -Wall
 INCLUDE := -Iinclude/
-LDFLAGS := -lcurl
+LDFLAGS := $(shell curl-config --libs)
 
 APP := covid-in
 BUILD := ./build
@@ -15,7 +15,7 @@ build:
 	@mkdir -pv $(BUILD)
 
 $(APP): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(OBJS) -o $(APP) 
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(APP) $(LDFLAGS)
 	@echo "App compiled successfully."
 
 $(BUILD)/%.o: %.cpp

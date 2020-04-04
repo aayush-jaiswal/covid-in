@@ -15,6 +15,15 @@ To install it in /usr/local/bin/ and use it globally run the following command
 $ sudo make install
 ```
 
+### Dependencies
+[libcurl](https://curl.haxx.se/docs/install.html)
+
+Install on Ubuntu based distro
+```sh
+$ sudo apt install libcurl4-openssl-dev
+```
+
+
 ## Usage
 
 * Get overall updates
