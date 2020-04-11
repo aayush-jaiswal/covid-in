@@ -16,6 +16,7 @@ $ sudo make install
 ```
 
 ### Dependencies
+
 [libcurl](https://curl.haxx.se/docs/install.html)
 
 Install on Ubuntu based distro
@@ -23,17 +24,28 @@ Install on Ubuntu based distro
 $ sudo apt install libcurl4-openssl-dev
 ```
 
-
 ## Usage
 
 * Get overall updates
-```sh
-$ covid-in
-```
+
+![Example 1](./screenshots/ex1.png)
+
+* Get updates of all states in tabular form
+
+![Example 2](./screenshots/ex2.png)
+
+* Get updates of a specific state
+
+![Example 3](./screenshots/ex3.png)
 
 * Show help
 ```sh
 $ covid-in -h
+```
+
+* Get stats of number of samples tested
+```sh
+$ covid-in -t
 ```
 
 * Show statecodes
@@ -41,31 +53,28 @@ $ covid-in -h
 $ covid-in --statecodes
 ```
 
-* Get stats of specific state or multiple states
-```sh
-$ covid-in -s [statecode]
-```
-OR 
+* Get stats multiple states 
 ```sh
 $ covid-in -s [statecode seperated by comma]
 ```
 
-## Screenshots
+--- 
 
-![Example 1](./screenshots/ex1.png)
-![Example 2](./screenshots/ex2.png)
-![Example 3](./screenshots/ex3.png)
-
-## TODOs
+### TODOs
 
 - [x] Add option to show tested data 
 - [x] Show delta changes
-- [ ] Add option to show district data
 - [x] Better output formatting
 - [x] Add option to show data of all states in tabular form
-- [ ] Add option to show top 10
 - [ ] Add sort option according to key 
 
 ### Data Source
 
 https://www.covid19india.org/
+
+
+### Libraries used
+
+[json](https://nlohmann.github.io/json/)
+
+[cxxopts](https://github.com/jarro2783/cxxopts)
