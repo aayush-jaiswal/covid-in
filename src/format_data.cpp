@@ -6,7 +6,7 @@ std::string stripped_string(std::string s) {
 }
 
 void print_formatted_output (json data) {
-    std::cout << stripped_string(data["state"]) << '\n';
+    std::cout << "### " << stripped_string(data["state"]) << " ###" << "\n\n";
     std::cout << "Confirmed: " << stripped_string(data["confirmed"]) << " [+" << stripped_string(data["deltaconfirmed"]) <<"]\n";
     std::cout << "Active: " << stripped_string(data["active"]) << '\n';
     std::cout << "Deaths: " << stripped_string(data["deaths"]) << " [+" << stripped_string(data["deltadeaths"]) <<"]\n";
@@ -16,9 +16,9 @@ void print_formatted_output (json data) {
 }
 
 void print_formatted_tested (json data) {
-    std::cout << "Test Data\n";
-    std::cout << "Total sample tested: " << stripped_string(data["totalsamplestested"]) << '\n';
-    std::cout << "Total positive cases: " << stripped_string(data["totalpositivecases"]) << '\n';
+    std::cout << "### Test Data ###\n\n";
+    std::cout << "Total Samples Tested: " << stripped_string(data["totalsamplestested"]) << '\n';
+    std::cout << "Total Positive Cases: " << stripped_string(data["totalpositivecases"]) << '\n';
     std::cout << "Last Updated Time: " << stripped_string(data["updatetimestamp"]) << '\n';
     std::cout << "---------\n";
 }

@@ -61,7 +61,7 @@ $ covid-in -s [statecode seperated by comma]
 - [x] Add option to show tested data 
 - [x] Show delta changes
 - [ ] Add option to show district data
-- [ ] Better output formatting
+- [x] Better output formatting
 - [ ] Add option to show data in tabular form
 - [ ] Add option to show top 10
 - [ ] Add sort option according to key 
