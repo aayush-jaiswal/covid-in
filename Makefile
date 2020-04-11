@@ -26,6 +26,6 @@ clean:
 	@echo "Cleaning...."
 	@rm -rvf $(BUILD) 
 
-install:
+install: all
 	@cp -v $(APP) $(INSTDIR)
-	@echo $(APP) is installed at $(INSTDIR)
+	@echo "You can now use covid-in globally"
