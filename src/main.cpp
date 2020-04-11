@@ -11,6 +11,7 @@ using json = nlohmann::json;
 
 int main(int argc, char *argv[]) {
     std::string app_name = argv[0];
+    
     try {
         cxxopts::Options options(app_name, "A command line app to get covid-19 update.");
         options.add_options()
@@ -54,7 +55,7 @@ int main(int argc, char *argv[]) {
                 }
             }
         }
-        
+
         if (result.count("all") == 0) {
             print_formatted_output(all_data["statewise"][0]);
         }
@@ -63,6 +64,7 @@ int main(int argc, char *argv[]) {
             print_formatted_tested(all_data["tested"].back());
         }
     }
+
     catch (const cxxopts::OptionException& e) {
         std::cerr << "Error parsing options! Try again with valid options.\n";
         std::cerr << "Use " << app_name << " -h for help\n"; 
