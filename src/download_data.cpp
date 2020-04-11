@@ -13,7 +13,7 @@ std::string get_api_data(const char *api_url) {
 
     if (!curl_handle) {
         std::cerr << "CURL ERROR! EXITING!";
-        exit(-1);
+        exit(2);
     }
 
     // setup
@@ -28,7 +28,7 @@ std::string get_api_data(const char *api_url) {
 
     if (return_code != CURLE_OK) {
         std::cerr << "An error occured! Make sure you have an active internet connection!\n";
-        exit(-1);
+        exit(2);
     }
 
     return data;
