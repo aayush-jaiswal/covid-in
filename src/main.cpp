@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include "json.hpp"
 #include "cxxopts.hpp"
 
@@ -40,6 +41,7 @@ int main(int argc, char *argv[]) {
         if (result.count("state")) {
             auto states = result["state"].as<std::vector<std::string>>();
             for (auto &s :  states) {
+                std::transform(s.begin(), s.end(), s.begin(), ::toupper);
                 for (auto &x : all_data["statewise"]) {
                     if (x["statecode"] == s) {
                         print_formatted_output(x);
@@ -57,6 +59,7 @@ int main(int argc, char *argv[]) {
     catch (const cxxopts::OptionException& e) {
         std::cerr << "Error parsing options! Try again with valid options.\n";
         std::cerr << "Use " << app_name << " -h for help\n"; 
+        return 1;
     }
 
     return 0;
