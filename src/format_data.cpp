@@ -7,10 +7,10 @@ std::string stripped_string(std::string s) {
 
 void print_formatted_output (json data) {
     std::cout << stripped_string(data["state"]) << '\n';
-    std::cout << "Confirmed: " << stripped_string(data["confirmed"]) << '\n';
+    std::cout << "Confirmed: " << stripped_string(data["confirmed"]) << " [+" << stripped_string(data["deltaconfirmed"]) <<"]\n";
     std::cout << "Active: " << stripped_string(data["active"]) << '\n';
-    std::cout << "Deaths: " << stripped_string(data["deaths"]) << '\n';
-    std::cout << "Recovered: " << stripped_string(data["recovered"]) << '\n';
+    std::cout << "Deaths: " << stripped_string(data["deaths"]) << " [+" << stripped_string(data["deltadeaths"]) <<"]\n";
+    std::cout << "Recovered: " << stripped_string(data["recovered"]) << " [+" << stripped_string(data["deltarecovered"]) <<"]\n";
     std::cout << "Last Updated Time: " << stripped_string(data["lastupdatedtime"]) << '\n';
     std::cout << "---------\n";
 }

@@ -59,7 +59,7 @@ $ covid-in -s [statecode seperated by comma]
 ## TODOs
 
 - [x] Add option to show tested data 
-- [ ] Show changes delta 
+- [x] Show delta changes
 - [ ] Add option to show district data
 - [ ] Better output formatting
 - [ ] Add option to show data in tabular form
