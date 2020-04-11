@@ -22,3 +22,46 @@ void print_formatted_tested (json data) {
     std::cout << "Last Updated Time: " << stripped_string(data["updatetimestamp"]) << '\n';
     std::cout << "---------\n";
 }
+
+void print_content(std::string s, int width) {
+    char space = ' ';
+    std::cout << std::right << std::setw(width) << std::setfill(space) << stripped_string(s);
+}
+
+void print_formatted_all(json states) {
+    int state_width = 30;
+    int num_width = 12;
+
+    print_content("State/UT", state_width);
+    print_content("Confirmed", num_width);
+    print_content("Active", num_width);
+    print_content("Recovered", num_width);
+    print_content("Deaths", num_width);
+    std::cout << '\n';
+    std::cout << std::left << std::setw(state_width + 4 * num_width) << std::setfill('-') << " ";
+    std::cout << '\n';
+    bool skip_total = true;
+    for (auto& s : states) {
+        if (skip_total) {
+            skip_total = false;
+            continue;
+        }
+        print_content(s["state"], state_width);
+        print_content(s["confirmed"], num_width);
+        print_content(s["active"], num_width);
+        print_content(s["recovered"], num_width);
+        print_content(s["deaths"], num_width);
+        std::cout << '\n';
+    }
+    std::cout << std::left << std::setw(state_width + 4 * num_width) << std::setfill('-') << " ";
+    std::cout << '\n';
+    print_content(states[0]["state"], state_width);
+    print_content(states[0]["confirmed"], num_width);
+    print_content(states[0]["active"], num_width);
+    print_content(states[0]["recovered"], num_width);
+    print_content(states[0]["deaths"], num_width);
+    std::cout << '\n';
+    std::cout << std::left << std::setw(state_width + 4 * num_width) << std::setfill('-') << " ";
+    std::cout << '\n';
+}
+

@@ -62,7 +62,7 @@ $ covid-in -s [statecode seperated by comma]
 - [x] Show delta changes
 - [ ] Add option to show district data
 - [x] Better output formatting
-- [ ] Add option to show data in tabular form
+- [x] Add option to show data of all states in tabular form
 - [ ] Add option to show top 10
 - [ ] Add sort option according to key 
 

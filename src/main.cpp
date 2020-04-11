@@ -17,6 +17,7 @@ int main(int argc, char *argv[]) {
             ("h, help", "Print help/usage")
             ("s, state", "Choose state(s) to display stats", cxxopts::value<std::vector<std::string>>(), "statecode")
             ("t, tested", "Show tested data")
+            ("a, all", "Show data of all states in tabular form")
             ("statecodes", "Display state codes");
 
         auto result = options.parse(argc, argv);
@@ -38,6 +39,10 @@ int main(int argc, char *argv[]) {
         const char *covid_india_api = "https://api.covid19india.org/data.json";
         json all_data = json::parse(get_api_data(covid_india_api));
         
+        if (result.count("all")) {
+            print_formatted_all(all_data["statewise"]);
+        }
+
         if (result.count("state")) {
             auto states = result["state"].as<std::vector<std::string>>();
             for (auto &s :  states) {
@@ -49,9 +54,11 @@ int main(int argc, char *argv[]) {
                 }
             }
         }
-
-        print_formatted_output(all_data["statewise"][0]);
-
+        
+        if (result.count("all") == 0) {
+            print_formatted_output(all_data["statewise"][0]);
+        }
+        
         if (result.count("tested")) {
             print_formatted_tested(all_data["tested"].back());
         }
