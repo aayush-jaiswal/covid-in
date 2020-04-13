@@ -5,7 +5,7 @@ A command line app to get covid-19 update.
 ## Installation
 
 ```sh
-$ git clone https://github.com/aayush-jaiswal/covid-in.git
+$ git clone https://github.com/exnz/covid-in.git
 $ cd covid-in/
 $ make
 ```
@@ -66,7 +66,6 @@ $ covid-in -s [statecode seperated by comma]
 - [x] Show delta changes
 - [x] Better output formatting
 - [x] Add option to show data of all states in tabular form
-- [ ] Add sort option according to key 
 
 ### Data Source
 
