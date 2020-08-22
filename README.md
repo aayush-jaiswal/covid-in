@@ -5,7 +5,7 @@ A command line app to get covid-19 update.
 ## Installation
 
 ```sh
-$ git clone https://github.com/exnz/covid-in.git
+$ git clone https://github.com/aayush-jaiswal/covid-in.git
 $ cd covid-in/
 $ make
 ```
